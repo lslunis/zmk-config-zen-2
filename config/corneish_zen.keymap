@@ -12,28 +12,11 @@
   flavor = "balanced";
 };
 
-/ {
-  behaviors {
-    lmt: left_mod_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "LEFT_MOD_TAP";
-      #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
-      flavor = "balanced";
-      tapping-term-ms = <200>;
-      hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34 35>;
-    };
-    rmt: right_mod_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "RIGHT_MOD_TAP";
-      #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
-      flavor = "balanced";
-      tapping-term-ms = <200>;
-      hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
-    };
-  };
+&mt {
+  flavor = "balanced";
+};
 
+/ {
   keymap {
     compatible = "zmk,keymap";
     default_layer {
@@ -41,7 +24,7 @@
       bindings = <
         &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp SEMI
         &kp A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
-        &kp Z &lmt LALT X &lmt LCMD C &lmt LCTRL D &kp V &kp K &rmt RCTRL H &rmt RCMD COMMA &rmt RALT DOT &kp SLASH
+        &kp Z &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt RCTRL H &mt RCMD COMMA &mt RALT DOT &kp SLASH
         &tog 1 &kp LSHFT &kp BSPC &kp TAB &lt 1 SPACE &kp ENTER
       >;
     };
@@ -51,7 +34,7 @@
       bindings = <
         &kp GRAVE &kp N7 &kp N8 &kp N9 &kp BSLH &kp ESC &kp LA(LEFT) &kp UP &kp LA(RIGHT) &trans
         &kp APOS &kp N4 &kp N5 &kp N6 &kp LPAR &kp LBKT &kp LEFT &kp DOWN &kp RIGHT &kp MINUS
-        &kp N0 &lmt LALT N1 &lmt LCMD N2 &lmt LCTRL N3 &kp RPAR &kp RBKT &rmt RCTRL EQUAL &trans &trans &trans
+        &kp N0 &mt LALT N1 &mt LCMD N2 &mt LCTRL N3 &kp RPAR &kp RBKT &mt RCTRL EQUAL &trans &trans &trans
         &trans &trans &trans &trans &trans &trans
       >;
     };
