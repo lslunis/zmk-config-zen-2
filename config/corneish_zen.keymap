@@ -61,21 +61,21 @@
   combos {
     compatible = "zmk,combos";
 
-    combo_out {
-        timeout-ms = <50>;
-        key-positions = <0 9>;
-        bindings = <&out OUT_TOG>;
-    };
-
     combo_clr {
         timeout-ms = <50>;
-        key-positions = <10 19>;
+        key-positions = <0 1 2>;
         bindings = <&bt BT_CLR>;
+    };
+
+    combo_out {
+        timeout-ms = <50>;
+        key-positions = <1 2 3>;
+        bindings = <&out OUT_TOG>;
     };
 
     combo_game {
         timeout-ms = <50>;
-        key-positions = <20 29>;
+        key-positions = <7 8 9>;
         bindings = <&tog 2>;
     };
   };
