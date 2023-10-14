@@ -63,19 +63,19 @@
 
     combo_clr {
         timeout-ms = <50>;
-        key-positions = <0 1 2>;
+        key-positions = <2 3 6>;
         bindings = <&bt BT_CLR>;
     };
 
     combo_out {
         timeout-ms = <50>;
-        key-positions = <1 2 3>;
+        key-positions = <2 3 7>;
         bindings = <&out OUT_TOG>;
     };
 
     combo_game {
         timeout-ms = <50>;
-        key-positions = <7 8 9>;
+        key-positions = <2 3 8>;
         bindings = <&tog 2>;
     };
   };
